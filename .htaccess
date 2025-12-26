@@ -1,0 +1,24 @@
+# Proteção de arquivos sensíveis
+<FilesMatch "^(config\.php|database\.sql)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Proteção do diretório admin (opcional - descomente se necessário)
+# <Directory "admin">
+#     Options -Indexes
+# </Directory>
+
+# Proteção do diretório uploads
+<Directory "uploads">
+    Options -Indexes
+</Directory>
+
+# Rewrite rules (opcional)
+RewriteEngine On
+
+# Redirecionar para index.php se arquivo não existir
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [L,QSA]
+

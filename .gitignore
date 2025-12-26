@@ -1,0 +1,33 @@
+# Diretórios de upload
+uploads/videos/*
+uploads/thumbnails/*
+!uploads/videos/.gitkeep
+!uploads/thumbnails/.gitkeep
+
+# Arquivos de configuração sensíveis
+config.php
+
+# Arquivos de instalação (deletar após uso)
+install.php
+setup_password.php
+
+# Logs
+*.log
+
+# Arquivos temporários
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# PHP
+vendor/
+composer.lock
+
